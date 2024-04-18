@@ -1,0 +1,267 @@
+{% extends 'page_2.html'%}
+{% load static%}
+
+
+{%block annees%}>2 ans{%endblock%}
+{%block profil%}{% static 'femme_f.png'%}{%endblock%}
+{%block enfants%}
+Maternelle-Ecolier
+{%endblock%}
+{%block etoiles%}
+        <p>
+          <span>
+            <img src="{% static 'etoile.png'%}" alt="" height="20" width="20" /> 
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+            <img src="{% static 'etoile.png'%}" alt="" height="20" width="20" />
+          </span>
+          Etoiles
+        </p>
+{%endblock%}
+
+{%block info%}
+            <h2 class="nom"> Lohoues <img src="{% static 'qualite.png'%}" width="40" height="40" /></h2>
+            <h2 class="age">Age <br/><span>19 ans</span></h2>
+            <h2 class="t_horaire">Taux Horaire<br/><span>17h/jrs</span></h2>
+
+{%endblock%}
+{%block description%}
+Bonjour à tous ,
+Je suis une étudiante en licence de physique chimie à l'universite de cocody , actuellement en première année. J'ai 19 ans .
+ Sérieuse et responsable, je cherche un job pour combler ma vie d' nts de joie et d'activités ( Nounou,  aide aux devoirs,  aide des personnes âgées, le ménage)
+J'aime bien garder les enfants et prendre soin d'eux . Ceci me parvient du fait que je suis l'aînée de..
+
+
+{%endblock%}
+
+{%block caracteristique%}
+            <div class="car">sportif</div>
+            <div class="car">Entreprenante</div>
+        
+{%endblock%}
+
+{%block propos%}
+        <article>
+            <div>
+                <h1 class="text"><img src="{%static 'permis.png'%}" width="40" height="40" />Permis de conduire <span class="propos">Non</span></h1>
+                <h1 class="text"><img src="{%static 'enfants.png'%}" width="40" height="40" />A des Enfants............<span class="propos">Oui</span></h1>
+                <h1 class="text"><img src="{%static 'formation.png'%}" width="40" height="40" />Formation.................<span class="propos">Non</span></h1>
+            </div>
+            <div>
+                <h1 class="text"><img src="{%static 'language.png'%}" width="40" height="40" />Langue...........<span class="propos">francais</span></h1>
+                <h1 class="text"><img src="{%static 'fumeur.png'%}" width="30" height="40" />Fumeur..................<span class="propos">Oui</span></h1>
+                <h1 class="text"><img src="{%static 'voiture.jpg'%}" width="40" height="40" />Voiture.................<span class="propos">Non</span></h1>
+            </div>
+        </article>
+    </section>
+    <section class="bloc_4">
+        <h1>Competence / Je suis a l'aise avec</h1>
+        <article>
+            <div>
+                <h1 class="text"><img src="{%static 'travaux.png'%}" width="40" height="40" />Travaux manuels<span class="propos"></span></h1>
+                <h1 class="text"><img src="{%static 'dessin.png'%}" width="40" height="40" />Dessin...................<span class="propos"></span></h1>
+                <h1 class="text"><img src="{%static 'lire.png'%}" width="40" height="40" />Faire la lecture....<span class="propos"></span></h1>
+                <h1 class="text"><img src="{%static 'musique.png'%}" width="40" height="40" />Musique..............<span class="propos"></span></h1>
+                <h1 class="text"><img src="{%static 'language.png'%}" width="25" height="25" />Langues...............<span class="propos"></span></h1>
+                <h1 class="text"><img src="{%static 'jeu.png'%}" width="40" height="40" alt="logo"/>Jeux.....................<span class="propos"></span></h1>
+            </div>
+            <div>
+                <h1 class="text"><img src="{%static 'animal.png'%}" width="40" height="40" />Animaux domestique <span class="propos"></span></h1>
+                <h1 class="text"><img src="{%static 'devoir.png'%}" width="35" height="35" />Aide au devoir.............<span class="propos"></span></h1>
+                <h1 class="text"><img src="{%static 'Ballai.png'%}" width="35" height="35" />Tache menagere.....<span class="propos"></span></h1>
+                <h1 class="text"><span class="propos"></span></h1>
+                <h1 class="text"><span class="propos"></span></h1>
+                <h1 class="text"><span class="propos"></span></h1>
+            </div>
+        </article>
+{%endblock%}
+{%block NouNou%} 
+<div class="wrapper"> 
+  <i id="left" class="fa-solid  fas fa-angle-left"></i> 
+  <ul class="carousel">
+    <a href="{%url 'Sophie'%}">
+      <li class="card"> 
+          <div class="img"><img src="{% static 'femme_s.png'%}" alt="" draggable="false"> </div> 
+          {%for nounous in nounou%}
+          {%if "Sophie" in nounous.nom%}
+          <h2 style="color: black; font-weight:bold;"> 
+                {{nounous.nom}}
+            </h2> 
+            {%endif%}
+            {%endfor%}
+          <span>
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" /> 
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+        </span> 
+      </li> 
+    </a>
+    <a href="{%url 'Alice'%}">
+      <li class="card"> 
+          <div class="img"><img src="{% static 'femme_g.png'%}" alt="" draggable="false"> </div>
+          {%for nounous in nounou%}
+          {%if "Alice" in nounous.nom%}
+          <h2 style="color: black; font-weight:bold;">{{nounous.nom}}</h2> 
+          {%endif%}
+          {%endfor%}
+          <span>
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" /> 
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+            
+          </span>      
+      </li> 
+    </a>
+    <a href="{%url 'Pamela'%}">
+      <li class="card"> 
+          <div class="img"><img src="{% static 'femme_t.png'%}" alt="" draggable="false"> </div> 
+          {%for nounous in nounou%}
+          {%if "Pamela" in nounous.nom%}
+          <h2 style="color: black; font-weight:bold;">{{nounous.nom}}</h2> 
+        
+          {%endif%}
+          {%endfor%}
+          <span>
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" /> 
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+            
+          </span> 
+        </span> 
+      </li> 
+      </a>
+      <a  href="{%url 'Sarah'%}">
+      <li class="card"> 
+          <div class="img"><img src="{% static 'femme_c.png'%}" alt="" draggable="false"> </div> 
+          {%for nounous in nounou%}
+          {%if "Sarah" in nounous.nom%}
+          <h2 style="color: black; font-weight:bold;">{{nounous.nom}}</h2> 
+        
+          {%endif%}
+          {%endfor%}
+          <span><img src="{% static 'etoile.png'%}" alt="" height="16" width="16" /> </span> 
+      </li> 
+      </a>
+      <a href="{%url 'Latifa'%}">
+      <li class="card"> 
+          <div  class="img"><img src="{% static 'femme_j.png'%}" alt="" draggable="false"> </div> 
+          {%for nounous in nounou%}
+          {%if "Latifa" in nounous.nom%}
+          <h2 style="color: black; font-weight:bold;">{{nounous.nom}}</h2> 
+        
+          {%endif%}
+          {%endfor%}
+          <span>
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+            <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+            
+        </span> 
+          
+      </li> 
+      </a>
+  </ul> 
+  <i id="right" class="fa-solid fas fa-angle-right"></i> 
+</div> 
+</section>
+{%endblock%}
+{%block commentaire%}
+<section class="bloc_4">
+  <h1>Commentaire</h1>
+<div class="slider-0">
+
+  <a href="#slide-1"></a>
+
+  <a href="#slide-3"></a>
+  
+  <a href="#slide-5"></a>
+
+  <div class="slides">
+    
+    <div id="slide-4">
+      
+      Tres bonne fille ,en plus d'etre gentille elle s'exprime bien...Merci ma cherie je la recommande a d'autre parents
+    </div>
+    <div id="slide-5">
+      Merci ma petite grace a toi mes journees sont moins charge...
+    </div>
+  </div>
+</div>
+</section>
+{%endblock%}
+{%block disponiblite%}
+<div class="availability">
+  <h1>
+                                                  Disponibilité
+                                          </h1>
+  <div class="mb-2">
+      <div class="table-responsive">
+
+          
+          <table class="table table-borderless table-sm">
+              <tr>
+                  <td class="ps-0"></td>
+                                                                          <th class="day">Lu</th>
+                                                                          <th class="day">Ma</th>
+                                                                          <th class="day">Me</th>
+                                                                          <th class="day">Je</th>
+                                                                          <th class="day">Ve</th>
+                                                                          <th class="day">Sa</th>
+                                                                          <th class="day">Di</th>
+                                                                  </tr>
+              <tr>
+                  <th class="ps-0">Matin</th>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="unavailable"><i class="fa-solid fa-square"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                  </tr>
+              <tr>
+                  <th class="ps-0">Après midi</th>
+                                                                          <td class="unavailable"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="unavailable"><i class="fa-solid fa-square"></i></td>
+                                                                          <td class="unavailable"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="unavailable"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                  </tr>
+              <tr>
+                  <th class="ps-0">Tard dans l&#039;après-midi</th>
+                                                                          <td class="available"><i class="fa-solid fa-square"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square"></i></td>
+                                                                          <td class="unavailable"><i class="fa-solid fa-square"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                  </tr>
+              <tr>
+                  <th class="ps-0">Soir</th>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="unavailable"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="unavailable"><i class="fa-solid fa-square-check"></i></td>
+                                                                          <td class="available"><i class="fa-solid fa-square-check"></i></td>
+                                                                  </tr>
+          </table>
+      </div>
+  </div>
+</div>
+
+{%endblock%}
+
+{%block contact%}
+    {%for nounous in nounou%}
+    {%if "Lohoues" in nounous.nom%}
+      
+    <a href="{%static 'Formulaire'%}"><h2>Contacter {{nounous.nom}}</h2></a>
+
+  {%endif%}
+{%endfor%}
+            
+{%endblock%}

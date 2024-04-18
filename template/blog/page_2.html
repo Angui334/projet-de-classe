@@ -1,0 +1,107 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+        <link rel="stylesheet" href="{%static 'page2.css'%}"/>
+        <script src="{% static 'page_home.js'%}"></script>
+    </head> 
+      
+    <body> 
+      
+      <header>
+        <div class="menu">
+          <nav>
+            <a href="{%url 'accueil'%}">Accueil</a>
+            <a href="#">A propos</a>
+            <a href="#">Contact</a>
+  
+            {%if user.is_authenticated%}
+            <a href="{%url 'deconnexion'%}">Deconnexion</a>
+            <a><mark>{{user.username}}</mark></a>
+            {%else%}
+            <a href="{%url 'connexion'%}">Connexion</a>
+            <a href="{%url 'inscription'%}"> Inscription</a>
+            <div class="animation start-home"></div>
+            {%endif%}
+          </nav>
+    </div>       
+        <div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+         </div>
+
+        <p class="image_nounou">
+            <img src={%block profil%}{%endblock%} width="230" height="230" />
+          
+        </p>
+        
+        <div class="info">
+          {%block info%}
+          {%endblock%}
+        </div>
+      </header>
+<div class="bloc_principal">
+      <div class="bloc_0">
+      <section class="bloc_1">
+        {%block etoiles%}
+        {%endblock%}
+        <p>
+          {%block description%}
+          {%endblock%}
+
+        </p>
+          <h1><img src="{%static 'caracteristique.png'%}" width="40" height="40" />Caracteristique</h1>
+        
+        <div class="caracteristique">
+          {%block caracteristique%}
+          {%endblock%}
+        </div>
+      </section>
+
+      <section class="bloc_2">
+        <h1><img src="{%static 'sac.png'%}" width="20" height="20" />Experience de Garde Enfants <br/><span>{%block annees%}{%endblock%}</span> </h1>
+        <h1><img src="{%static 'gateau.png'%}" width="20" height="20" />Experience avec <br/><span>{%block enfants%}{%endblock%}</span></h1>
+        <div class="disponibilite">
+
+        </div>
+      </section>
+
+      <section class="bloc_3">
+        <h1>A propos de moi</h1>
+        {%block propos%}
+        {%endblock%}
+      </section>
+      {%if user.is_authenticated%}
+      </div>
+      <div class="contacter">
+        <h1>
+            12,00£ /jour
+        </h1>
+        <div class="boutton_contacter">
+          {%block contact%}
+            {%endblock%}
+        </div>
+      </div>
+      </div>
+      {%else%}
+      <div class="inscrit"><a href="{%url 'inscription'%}">Je m'inscris</a></div>
+      {%endif%}
+
+    {%block disponiblite%} 
+    {%endblock%}
+
+    {%block commentaire%}
+    {%endblock%}
+      <section class="bloc_5">
+        <h1 class="text_bloc4">Rencontrer d'autres <strong>Nounou</strong></h1>
+
+    
+    {%block NouNou%}
+    {%endblock%}
+      </section>
+      
+    </body> 
+      
+    </html>

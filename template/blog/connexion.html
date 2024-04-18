@@ -1,0 +1,35 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8" />
+        <link rel="stylesheet" href="{%static 'connexion.css'%}"/>
+    </head>
+    <body> 
+        <body>
+            <section class="container">
+                <div class="login-container">
+                    <div class="circle circle-one"></div>
+                    <div class="form-container">
+                        <p>{{message}}</p>
+                        <img src="{%static 'illustration.png'%}" alt="illustration" class="illustration" />
+                        <h1 class="opacity">Connexion</h1>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{form.username}}
+                            {{form.password}}
+                            <button class="opacity">SUBMIT</button>
+                        </form>
+                        <div class="register-forget opacity">
+                            <a href="">REGISTER</a>
+                            <a href="">FORGOT PASSWORD</a>
+                        </div>
+                    </div>
+                    <div class="circle circle-two"></div>
+                </div>
+                <div class="theme-btn-container"></div>
+            </section>
+        
+            <script src="{%static 'connexion.js'%}"></script>
+        </body>
+</html>

@@ -1,0 +1,22 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>formulaire d'inscription</title>
+        <link rel="stylesheet"href="{%static 'inscription.css'%}"/>
+    </head>
+    <boby>
+       
+        <div class="container">
+            <form method="POST">
+                <h1> formulaire d'inscription</h1>
+                {% csrf_token %}        
+                {{form.username}}<br/>
+                {{form.email}}<br/>
+                {{form.password1}}<br/>
+                {{form.password2}}<br/>
+                <input type="submit" value="connexion"><br>
+            </form>
+        </div>
+    </boby>
+</html>

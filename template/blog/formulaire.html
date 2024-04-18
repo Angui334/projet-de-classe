@@ -1,0 +1,330 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>formulaire d'inscription</title>
+        <link rel="stylesheet"href="{%static 'formul.css'%}"/>
+        
+    </head>
+    <body>
+        <div class="formbold-main-wrapper">
+               <div class="formbold-form-wrapper">
+                   
+                 <form  method="POST">
+                    {% csrf_token %}
+                     <div class="formbold-steps">
+                         <ul>
+                             <li class="formbold-step-menu1 active">
+                                 <span>1</span>
+                                 <img src="{%static 'R.png'%}" width="30" height="30"/>
+                             </li>
+                             <li class="formbold-step-menu2">
+                                 <span>2</span>
+                                 <img src="{%static 'permis.png'%}" width="30" height="30"/>
+                             </li>
+                             <li class="formbold-step-menu3">
+                                 <span>3</span>
+                                 Confirmation
+                             </li>
+                         </ul>
+                     </div>
+             
+                     <div class="formbold-form-step-1 active">
+                       <p><img src="{%static 'OIP.jpg'%}" height="100" width="100"/></p>
+                       <div class="formbold-input-flex">
+                         
+                         <div>
+                             <label for="firstname" class="formbold-form-label"> Nom </label>
+                             {{form.Nom}}
+                         </div>
+                         <div>
+                             <label for="lastname" class="formbold-form-label"> Prenom </label>
+                             {{form.Prenom}}
+                         </div>
+                       </div>
+               
+                       <div class="formbold-input-flex">
+                           <div>
+                               <label for="date" class="formbold-form-label"> Date de Naissance </label>
+                               {{form.Date_naissance}}
+                           </div>
+                           <div>
+                               <label for="email" class="formbold-form-label">E-mail parent </label>
+                               <input
+                               type="email"
+                               name="email"
+                               placeholder="example@mail.com"
+                               id="email"
+                               class="formbold-form-input"
+                               />
+                           </div>
+                       </div>
+               
+                       <div>
+                           <label for="address" class="formbold-form-label"> Adresse </label>
+                           {{form.Adresse}}
+                       </div>
+                     </div>
+                   
+                     <div class="formbold-form-step-2">
+                       <div>
+                         <label for="enfants" class="formbold-form-label"> Nombres Enfants </label>
+                         {{form.nombre_enfants}}
+                       </div>
+                       <div>
+                         <label for="message" class="formbold-form-label">Decrivez vos enfants </label>
+                         {{form.Description_enfants}}
+                         <div>
+                           <label class="formbold-form-label"> Nous avons besoin d'une nounou a l'aise avec </label>
+       
+                         {{form.Competences}}
+                           
+                         </div>
+                       </div>
+                     </div>
+             
+                     <div class="formbold-form-step-3">
+       
+                       <div class="formbold-form-confirm">
+                         <label for="message" class="formbold-form-label">Quand avez vous besoin de Nounou</label>
+                         
+                         <div class="availability">
+                         
+                           <div class="mb-2">
+                               <div class="table-responsive">
+                   
+                                   
+                                   <table class="table table-borderless table-sm">
+                                       <tr>
+                                           <td class="ps-0"></td>
+                                                                                                   <th class="day">Lu</th>
+                                                                                                   <th class="day">Ma</th>
+                                                                                                   <th class="day">Me</th>
+                                                                                                   <th class="day">Je</th>
+                                                                                                   <th class="day">Ve</th>
+                                                                                                   <th class="day">Sa</th>
+                                                                                                   <th class="day">Di</th>
+                                                                                           </tr>
+                                       <tr>
+                                           <th class="ps-0">Matin</th>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   />
+                                                                                                 </td>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="unavailable"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                           </tr>
+                                       <tr>
+                                           <th class="ps-0">Après midi</th>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="unavailable"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                                   <td class="available"><input
+                                                                                                     type="checkbox"
+                                                                                                     name="lieu"
+                                                                                                     id="lieu"
+                                                                                                   /></td>
+                                                                                           </tr>
+                                       <tr>
+                                           <th class="ps-0">Tard dans l&#039;après-midi</th>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="unavailable"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                                                                           </tr>
+                                       <tr>
+                                           <th class="ps-0">Soir</th>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="unavailable"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                           <td class="available"><input
+                                             type="checkbox"
+                                             name="lieu"
+                                             id="lieu"
+                                           /></td>
+                                                                                           </tr>
+                                   </table>
+                                    </div>
+                               </div>
+                       </div>
+                   
+                         <div>
+                           <button class="formbold-confirm-btn active">
+                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                             <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC"/>
+                             <g clip-path="url(#clip0_1667_1314)">
+                             <path d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z" fill="#536387"/>
+                             </g>
+                             <defs>
+                             <clipPath id="clip0_1667_1314">
+                             <rect width="14" height="14" fill="white" transform="translate(4 4)"/>
+                             </clipPath>
+                             </defs>
+                             </svg>
+                             Oui! je valide.
+                           </button>
+             
+                           <button class="formbold-confirm-btn">
+                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                             <circle cx="11" cy="11" r="10.5" fill="white" stroke="#DDE3EC"/>
+                             <g clip-path="url(#clip0_1667_1314)">
+                             <path d="M9.83343 12.8509L15.1954 7.48828L16.0208 8.31311L9.83343 14.5005L6.12109 10.7882L6.94593 9.96336L9.83343 12.8509Z" fill="#536387"/>
+                             </g>
+                             <defs>
+                             <clipPath id="clip0_1667_1314">
+                             <rect width="14" height="14" fill="white" transform="translate(4 4)"/>
+                             </clipPath>
+                             </defs>
+                             </svg>
+                             Je Valide pas.
+                           </button>
+                         </div>
+                       </div>
+                     </div>
+             
+                     <div class="formbold-form-btn-wrapper">
+                       <button class="formbold-back-btn">
+                         retour
+                       </button>
+             
+                       <button class="formbold-btn">
+                           Suivant
+                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <g clip-path="url(#clip0_1675_1807)">
+                           <path d="M10.7814 7.33312L7.20541 3.75712L8.14808 2.81445L13.3334 7.99979L8.14808 13.1851L7.20541 12.2425L10.7814 8.66645H2.66675V7.33312H10.7814Z" fill="white"/>
+                           </g>
+                           <defs>
+                           <clipPath id="clip0_1675_1807">
+                           <rect width="16" height="16" fill="white"/>
+                           </clipPath>
+                           </defs>
+                           </svg>
+                       </button>
+                     </div>
+                 </form>
+               </div>
+             </div>
+             
+                       
+                   
+       
+                  
+             <script src="{% static 'formulaire.js'%}"></script>
+               
+     </body>
+     </html>

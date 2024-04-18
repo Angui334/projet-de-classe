@@ -1,0 +1,333 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+        <link rel="Stylesheet" href="{% static 'home.css'%}"/>
+        <script src="{% static 'page_home.js'%}"></script>
+        <title>Accueil</title>
+        <style>
+          @font-face {
+            font-family: 'FontleroyBrown';
+            src: url('{% static 'FontleroyBrown.ttf' %}');
+          }
+        </style>
+    </head>
+    <body>
+      <div class="menu">
+        <h1>Nounou.mania<img src="{% static 'qualite.png'%}" width="40" height="40" /></h1>
+          <nav>
+            <a href="{%url 'accueil'%}">Accueil</a>
+            <a href="#">A propos</a>
+            <a href="#">Contact</a>
+
+            {%if user.is_authenticated%}
+            <a href="{%url 'deconnexion'%}">Deconnexion</a>
+            <a><img src="{% static 'verouiller.jpg'%}" width="30" height="30" /><em>{{user.username}}</em></a>
+            {%else%}
+            <a href="{%url 'connexion'%}">Connexion</a>
+            <a href="{%url 'inscription'%}"> Inscription</a>
+            <div class="animation start-home"></div>
+            {%endif%}
+          </nav>
+    </div>        
+            <header>
+                <h1 class="text_principal">La plateforme Leader<br/>Dans la garde<br>D'enfants."</h1>
+                {%if user.is_authenticated%}
+                <span ><a href="{%url 'Formulaire'%}" class="bouton_entete">Commencer</a></span>
+                {%else%}
+                <span ><a href="{%url 'inscription'%}" class="bouton_entete">s'inscrire</a></span>
+                {%endif%}
+            </header>
+            
+            <section class="bloc_1">
+                <div class="bloc_temps"><p><img src="{% static 'temps.png'%}" alt="logo" width="150px" height="150px"/></p>
+                     <h1>Gain de Temps</h1>
+                </div>
+                <div  class="bloc_simplicite"><p><img src="{% static 'etoile_2.png'%}" alt="logo"  width="150px" height="150px"/></p>
+                    <h1>Simplicite,<br/>Utilisation</h1>
+               </div>
+               <div   class="bloc_fiabilite"><p><img src="{% static 'fiabilite.png'%}" alt="Logo"  width="150px" height="150px"/></p>
+                    <h1>Fiabilite</h1>
+               </div>
+              <div class='air air1'></div>
+              <div class='air air2'></div>
+              <div class='air air3'></div>
+              <div class='air air4'></div>
+
+            </section>
+
+            <section class="bloc_2">
+                
+                <p class="image_bloc2"><img src="{% static 'baby.png'%}" alt="logo" /></p>
+                <div class="info_propos">
+                    <p><span class="mini_text"><em>A propos</em></span></p>
+
+                    <h1 class="block-effect" style="--td: 1.2s">
+                        <div class="block-reveal" style="--bc: #4040bf; --d: .1s"><h1>Nos Nounou,</h1></div>
+                        <div class="block-reveal" style="--bc: #bf4060; --d: .5s">Vous accompagne</div>
+                    </h1>
+
+                    <p>Eh bien une facon belle et bien fiable de trouver une nounou et facilite le quotidien<br/>
+                    des <strong>maman</strong> et <strong>papa</strong> qui ont besoin d'aide dans la maison...
+                    </p>
+                    <p><img src="{% static 'qualite.png'%}" width="30" height="30"/></p>
+                    <p><strong>Professionnel & Nounou Qualifie</strong></p>
+                    <p><img src="{% static 'qualite.png'%}" width="30" height="30"/></p>
+                    <p><strong> la personnalite de L'enfant</strong></p>
+                    <p><img src="{% static 'qualite.png'%}" width="30" height="30"/></p>
+                    <p><strong>Respect du Contrat</strong></p>
+                    <p><img src="{% static 'logo-humain.jpg'%}" width="80" height="80"/></p>
+                    <h2>Children association</h2>
+                    <p>CEO & COfondateur</p>
+                    <div class="boutton_bloc2"><a href="{%static 'accueil'%}">Savoir plus</a></div>
+                </div>
+            </section>
+
+            <section class="bloc_3">
+              <div class="slider">
+                <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+                <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+                <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+                <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+    
+                <div class="slider__inner">
+                  <div class="slider__contents"><i class="slider__image fa fa-codepen"></i>
+                  <div class="box1_bloc3">
+                    <p class="bloc3_image1"></p>
+                    <h2 class="slider__caption">NOURRISON</h2>
+                    <span class="anne1_bloc_3"><h2>(1.5-3 ans)</h2></span>  
+                    <p class="slider__txt">Le lien initial est essentiel pour nous et surtout pour nos nourrisson de sorte a creer une connexion emotionnele profonde...</p>
+                  </div>
+                
+                  </div>
+    
+                  
+                  <div class="slider__contents"><i class="slider__image fa fa-newspaper-o"></i>
+                  <div class="box2_bloc3">
+                    <p class="bloc3_image2"></p>            
+                    <h2 class="slider__caption">MATERNELLE</h2>
+                    <span class="anne2_bloc_3"><h2>(3-5 ans)</h2></span>
+                    <p class="slider__txt">La suivie de votre enfants est notre priorites pendant toutes cettes merveilleuses annees.En effet les enfants apprennent par le jeu...</p>
+                  </div>
+                
+                  </div>
+    
+                  <div class="slider__contents"><i class="slider__image fa fa-television"></i>
+                  <div class="box3_bloc3"> 
+                    <p class="bloc3_image3"></p>
+                    <h2 class="slider__caption">ECOLIER</h2>
+                    <span class="anne3_bloc_3"><h2>(5-13 ans)</h2></span>
+                    <p class="slider__txt">Nous viellons aux bons resultats scolaire de votre enfants et son son insersion dans la vie sociale.L'apprentissage et le developpement psychologique...</p>
+                  </div>
+                  
+                  </div>
+    
+                  
+                  <div class="slider__contents"><i class="slider__image fa fa-diamond"></i>
+                    <div class="box_bloc3">  
+                      <h2 class="slider__caption">ADOLESCENT</h2>
+                      <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+    
+            <section class="bloc_4">
+              <h1 class="text_bloc4">Rencontrer des <strong>Nounou</strong><br/> Verifiees dans votre region</h1>
+              <div class="wrapper"> 
+                <i id="left" class="fa-solid  fas fa-angle-left"></i> 
+                <ul class="carousel">
+                  <a href="{%url 'Sophie'%}">
+                    <li class="card"> 
+                        <div class="img"><img src="{% static 'femme_s.png'%}" alt="" draggable="false"> </div> 
+                        {%for nounous in nounou%}
+                        {%if "Sophie" in nounous.nom%}
+                        <h2 style="color: black; font-weight:bold;"> 
+                              {{nounous.nom}}
+                          </h2> 
+                          {%endif%}
+                          {%endfor%}
+                        <span>
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" /> 
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                      </span> 
+                    </li> 
+                  </a>
+                  <a href="{%url 'Alice'%}">
+                    <li class="card"> 
+                        <div class="img"><img src="{% static 'femme_g.png'%}" alt="" draggable="false"> </div>
+                        {%for nounous in nounou%}
+                        {%if "Alice" in nounous.nom%}
+                        <h2 style="color: black; font-weight:bold;">{{nounous.nom}}</h2> 
+                        {%endif%}
+                        {%endfor%}
+                        <span>
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" /> 
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          
+                        </span>      
+                    </li> 
+                  </a>
+                  <a href="{%url 'Pamela'%}">
+                    <li class="card"> 
+                        <div class="img"><img src="{% static 'femme_t.png'%}" alt="" draggable="false"> </div> 
+                        {%for nounous in nounou%}
+                        {%if "Pamela" in nounous.nom%}
+                        <h2 style="color: black; font-weight:bold;">{{nounous.nom}}</h2> 
+                      
+                        {%endif%}
+                        {%endfor%}
+                        <span>
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" /> 
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          
+                        </span> 
+                      </span> 
+                    </li> 
+                    </a>
+                    <a href="{%url 'Lohoues'%}">
+                    <li class="card"> 
+                        <div class="img"><img src="{% static 'femme_f.png'%}" alt="" draggable="false"> </div> 
+                        {%for nounous in nounou%}
+                        {%if "Lohoues" in nounous.nom%}
+                        <h2 style="color: black; font-weight:bold;">{{nounous.nom}}</h2> 
+                      
+                        {%endif%}
+                        {%endfor%}
+                        <span>
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" /> 
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          
+                        </span> 
+                      </span> 
+                    </li> 
+                    </a>
+                    <a  href="{%url 'Sarah'%}">
+                    <li class="card"> 
+                        <div class="img"><img src="{% static 'femme_c.png'%}" alt="" draggable="false"> </div> 
+                        {%for nounous in nounou%}
+                        {%if "Sarah" in nounous.nom%}
+                        <h2 style="color: black; font-weight:bold;">{{nounous.nom}}</h2> 
+                      
+                        {%endif%}
+                        {%endfor%}
+                        <span><img src="{% static 'etoile.png'%}" alt="" height="16" width="16" /> </span> 
+                    </li> 
+                    </a>
+                    <a href="{%url 'Latifa'%}">
+                    <li class="card"> 
+                        <div class="img"><img src="{% static 'femme_j.png'%}" alt="" draggable="false"> </div> 
+                        {%for nounous in nounou%}
+                        {%if "Latifa" in nounous.nom%}
+                        <h2 style="color: black; font-weight:bold;">{{nounous.nom}}</h2> 
+                      
+                        {%endif%}
+                        {%endfor%}
+                        <span>
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          <img src="{% static 'etoile.png'%}" alt="" height="16" width="16" />
+                          
+                      </span> 
+                        
+                    </li> 
+                    </a>
+                </ul> 
+                <i id="right" class="fa-solid fas fa-angle-right"></i> 
+            </div> 
+            </section>
+
+            <section class="bloc_5">
+              <article class="box_bloc5">
+                <p class="image_bloc5"><img src="{%static 'baby2.png'%}" height="330"/> </p>
+                <div class="text_bloc5"><h1>Faire inscrit ton enfant</h1>
+                  <p> Inscrit ton enfant afin de choisir la Nounou parfait pour cette<br/>
+                    petite boule de joie que son nos enfants
+                  </p>
+                  <div class="boutton_bloc5"><a href="{%static 'accueil'%}">Commencer</a></div>
+                </div>
+              </article>
+            </section>
+
+            <section class="bloc_6">
+              <h1>Nounou.mania soutient plus 1 Millions de membres comme vous<br/>
+                <span>
+                  <img src="{% static 'etoile.png'%}" alt="" height="25" width="25" /> 
+                  <img src="{% static 'etoile.png'%}" alt="" height="25" width="25" />
+                  <img src="{% static 'etoile.png'%}" alt="" height="25" width="25" />
+                  <img src="{% static 'etoile.png'%}" alt="" height="25" width="25" />
+                  <img src="{% static 'etoile.png'%}" alt="" height="25" width="25" />
+                </span>
+                4,5/5
+              </h1> 
+            
+            <div class="slider-0">
+  
+              <a href="#slide-1"></a>
+      
+              <a href="#slide-3"></a>
+              
+              <a href="#slide-5"></a>
+            
+              <div class="slides">
+                <div id="slide-1">
+                  <img src="{%static 'coupleafro.jpg'%}" width="50" height="50"/>
+                  J'ai debute il n'y a pas longtemps et je crois que je devient accro... je conseil vivement a mes cher parents commme moi
+                 
+                </div>
+                <div id="slide-2">
+                  <img src="{%static 'couple2.jpg'%}" width="50" height="50"/>
+                  Je l'ai decouverte l'annee derniere et maintenant et j'ai eu de tres bonnes experiences de travail avec ma famille
+                 
+                </div>
+                <div id="slide-3">
+                  <img src="{%static 'couple1.jpg'%}" width="50" height="50"/>
+                  C'est plus que bien,sa change ma vie.C'est une experience tres agreable de avoir du temps de nouveau pour soi meme
+                </div>
+                <div id="slide-4">
+                  <img src="{%static 'program-3-2.jpg'%}" width="50" height="50"/>
+                  C'est super simple a utiliser ,fiable et en plus nombreux systeme de securite .Je suis vraiment combler merci les gars
+                </div>
+                <div id="slide-5">
+                  <img src="{%static 'mamy.jpg'%}" width="50" height="50"/>
+                C'est la facon pour moi la plus rapide simple et fiable de trouver une nounou pour nos enfants j'incite les parents a tester
+                </div>
+              </div>
+            </div>
+            </section>
+
+
+            <script src="{% static page_home.js%}"></script>
+        </div>
+         <footer>
+          <div class="contacter_nous">
+            <p><img src="{%static 'logo_site.png'%}"/></p>
+            <h1>Nounou mania </h1>
+            <h4>Les createurs :</h4>
+            <p>Angui ivan & Kouassi frederic</p>
+            <p>(Tel : 0574287152)</p>
+          </div>
+          <div class="Nous_suivre">
+            <h1>Nous suivre sur </h1>
+            <p> Instagram  X.com  Facebook</p>
+          </div>
+          <div class="nos_partenaires">
+              <p><img src="{%static 'logo-humain.jpg'%}" width="50" height="50"/></p>
+          </div>
+          <div>
+            <h4>Mentions legales</h4>
+            <h4>Conditions d'utilisation</h4>
+            <h4>Politique de protection des donnes personnelles</h4>
+            <h4>Cookies</h4>
+          </div>
+         </footer>   
+    </body>
+</html>
